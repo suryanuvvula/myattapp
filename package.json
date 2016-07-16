@@ -1,0 +1,23 @@
+{
+  "name": "myattapp",
+  "version": "1.0.0",
+  "description": "my application using MEAN stack",
+  "main": "index.js",
+  "dependencies": {
+    "lite-server": "^2.2.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "my",
+    "MEAN",
+    "stack",
+    "app"
+  ],
+  "author": "surya",
+  "license": "ISC"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "myattapp",
+  "description": "my application using MEAN stack",
+  "main": "index.js",
+  "authors": [
+    "surya"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "my",
+    "MEAN",
+    "stack",
+    "app"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "angular-ui-bootstrap": "^1.3.3",
+    "font-awesome": "fontawesome#^4.6.3",
+    "angular-bootstrap": "^1.3.3"
+  }
+}

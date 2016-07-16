@@ -1,0 +1,8 @@
+<div ng-controller="inboxCtrl as inboxDis">
+<h2>This is displayed when clicked on inbox</h2>
+<ul class="list-group" ng-repeat="inbox in inboxDis.inboxData" >
+  <li class="list-group-item">{{inbox.title}}</li>
+</ul>
+<p>{{inboxDis.inboxData}}</p>
+<p>{{inboxDis.myname}}
+</div>
