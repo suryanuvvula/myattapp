@@ -1,16 +1,30 @@
 
 <div class="container"  style="float:left;padding:0px;" ng-controller="inboxCtrl as inboxDis">
 <div class="row">
-<div class="col-sm-3">
+<div class="col-md-3">
 <div class="list-group">
   <a ui-sref="dashboard.mail.list" ng-click="inboxDis.inboxDisplay()" class="list-group-item active">Inbox</a>
   <a ui-sref="dashboard.mail.junk" class="list-group-item">Junk Email</a>
   <a ui-sref="dashboard.mail.drafts" class="list-group-item">Drafts</a>
   <a ui-sref="dashboard.mail.sentitems" class="list-group-item">Sent Items</a>
   <a ui-sref="dashboard.mail.deleteditems" class="list-group-item">Deleted Items</a>
- <p>{{inboxDis.inboxData}}</p>
-<p>{{inboxDis.myname}}
+</div>
+</div>
+<div class="col-md-9">
+<ul class="list-group">
+<li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData">
+<img class="image" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
+  <span class="active">{{inbox.title}}</span>
+  <span class="list-group-item">{{inbox.description}}</span>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
-</div>
+<style>
+.image{
+width : 50px;
+border-radius : 10px;
+}
+</style>
