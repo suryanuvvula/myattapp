@@ -5,7 +5,6 @@
 	.directive('inboxLayout',function(){
 		
 		return{
-			scope: {},
 			templateUrl : '/src/module/directive/inboxlayout/inbox.html'
 		}
 	})
