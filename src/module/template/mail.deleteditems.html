@@ -1,2 +1,11 @@
 
 <h2>This is displayed when clicked on deleteditems</h2>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" >
+  <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
+  <span>{{inbox.title}}</span>
+  <div style="margin-left:75px;">{{inbox.description}}</div>
+  </li>
+  
+</ul>

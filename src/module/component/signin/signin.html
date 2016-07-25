@@ -10,18 +10,18 @@
 <div class="form-group" ng-class="{'isError':signinForm.emailInput.$invalid && !signinForm.emailInput.$pristine}">
 <label for="email">Email: </label>
 <input type="email" name="emailInput" class="form-control" ng-model="email" placeholder="Please enter your email" required></br>
-<p class="text-danger" ng-if="signinForm.emailInput.$invalid">You need to enter the email</p>
+<p class="text-danger" ng-if="signinForm.emailInput.$invalid && !signinForm.emailInput.$pristine">You need to enter the email</p>
 </div>
 <div class="form-group" ng-class="{'isError':signinForm.passwordInput.$invalid && !signinForm.passwordInput.$pristine}">
 <label for="password">Password: </label>
 <input type="password" class="form-control" name= "passwordInput" ng-model="password" placeholder="Please enter your password" ng-maxlength = "10" required></br>
-<p class="text-danger" ng-if="signinForm.passwordInput.$invalid">You need to enter the Password</p>
+<p class="text-danger" ng-if="signinForm.passwordInput.$invalid && !signinForm.passwordInput.$pristine">You need to enter the Password</p>
 </div>
 <input type="checkbox" id="remember me">
 <label for="remember me">Remember Me</label></br>
 <p>{{signin.name}}</p>
 <p>{{names}}</p>
-<input type="submit" class="btn btn-success" value="Submit" ng-disabled="signinForm.$invalid">
+<input type="submit" class="btn btn-success" value="Submit">
 <input type="button" class="btn btn-success" value="cancel">
 </form>
 </div>

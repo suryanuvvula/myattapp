@@ -2,7 +2,8 @@
 (function(window,angular){
 	angular.module('outlookApp',[
 	'ui.router',
-	'ui.bootstrap'
+	'ui.bootstrap',
+	'textAngular'
 	
 	])
 	
@@ -54,6 +55,11 @@
 		.state('dashboard.mail.deleteditems',{
 			url : '/deleteditems',
 			templateUrl : '/src/module/template/mail.deleteditems.html'
+		})
+		
+		.state('dashboard.mail.compose',{
+			url : '/compose',
+			templateUrl : '/src/module/template/mail.compose.html'
 		})
 		
 		.state('signin',{

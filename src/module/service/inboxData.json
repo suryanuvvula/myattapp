@@ -6,12 +6,22 @@
 	 "description" : "My first inbox component"
   },
   {
-     "title" : "Angular app1",
+     "title" : "Bootstrapping Application with Angular app",
 	 "image" : "src/module/component/images/a10.jpg",
 	 "description" : "My Second inbox component"
   },
   {
-     "title" : "Angular app2",
+     "title" : "Sample MEAN stack application",
+	 "image" : "src/module/component/images/a10.jpg",
+	 "description" : "My third inbox component"
+  },
+  {
+     "title" : "Sample MEAN stack application",
+	 "image" : "src/module/component/images/a10.jpg",
+	 "description" : "My third inbox component"
+  },
+  {
+     "title" : "Sample MEAN stack application",
 	 "image" : "src/module/component/images/a10.jpg",
 	 "description" : "My third inbox component"
   }

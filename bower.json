@@ -21,7 +21,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "textAngular": "^1.5.2"
   },
   "devDependencies": {
     "angular": "^1.5.7",
