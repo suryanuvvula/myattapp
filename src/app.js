@@ -3,8 +3,8 @@
 	angular.module('outlookApp',[
 	'ui.router',
 	'ui.bootstrap',
-	'textAngular'
-	
+	'textAngular',
+	'ngSanitize'
 	])
 	
 	.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -35,6 +35,13 @@
 		.state('dashboard.mail.list',{
 			url : '/inbox',
 			templateUrl : '/src/module/template/mail.list.html'
+		})
+		
+		//nested views 
+		
+		.state('dashboard.mail.list.inboxitem',{
+			url : '/inboxitem',
+			templateUrl : '/src/module/template/InboxItem.html'
 		})
 		
 		.state('dashboard.mail.junk',{

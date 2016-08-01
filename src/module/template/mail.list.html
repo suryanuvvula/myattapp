@@ -1,12 +1,15 @@
-<div>
+<div class="listInbox">
 <h2>This is displayed when clicked on inbox</h2>
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" >
+  <li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" ng-class="inboxDis.listClass(inbox.title)">
   <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
-  <span>{{inbox.title}}</span>
+  <span><a ui-sref=".inboxitem">{{inbox.title}}</a></span>
   
-  <div style="margin-left:75px;">{{inbox.description}}</div>
+  <div style="margin-left:75px;" ng-bind-html="inbox.description"></div>
+  
   </li>
-  <span>{{mailData.name}}</span>
+  
 </ul>
+
 </div>
+<div ui-view></div>

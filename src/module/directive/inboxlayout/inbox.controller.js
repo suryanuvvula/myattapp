@@ -11,12 +11,17 @@
 			
 			var mail = inboxService.mailList();
 			mail.then(function(response){
-				var mailData = $window.sessionStorage.getItem('mailData');
-				mailData = JSON.parse(mailData);
+				var mailData = angular.fromJson($window.sessionStorage.getItem('mailData'));
+				//mailData = JSON.parse(mailData);
 				if(mailData){
 			    var inboxResponse = response.data;
 		        inboxResponse.push(mailData);
-				}else{
+				   
+				}
+			/*	if(mailData['title'] == "angular"){
+					model.myAngular = true;
+				}*/
+				else{
 					var inboxResponse = response.data;
 				}
 				model.inboxData = inboxResponse;
@@ -41,14 +46,31 @@
 			
 	       $window.sessionStorage.setItem('mailData',JSON.stringify(mailData));
 	       $state.go('dashboard.mail.list');
+		   
+		   
 		
 		}
-		//model.myMail();
+		model.listClass = function(title){
+			return {
+				'mailClass' : angular.lowercase(title) === 'angular',
+				'angularClass' : angular.lowercase(title) === 'angular app'
+			}
+		}
+		model.listClass();
+		
+		model.myFunc = function(){
+			alert('hello');
+		}
+		
+		
 		
 	}
 	
 	inboxCtrl.$inject = ['$scope','$http','inboxService','$state','$window'];
 	
 	angular.module('outlookApp')
-	.controller('inboxCtrl',inboxCtrl);
+	.controller('inboxCtrl',inboxCtrl)
+	
+	
+	
 })(window,window.angular);
