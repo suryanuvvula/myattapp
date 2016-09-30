@@ -1,16 +1,22 @@
 
-
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
 <button class="btn btn-danger" ng-click="inboxDis.mailDisplay()">Compose</button>
 </hr>
-
+ 
 <div class="row">
 <div class="col-xs-12">
+  <i class="fa fa-angle-double-up pull-right" id="pullup" title="chevron" href="#" pull-up-chevron></i>
 <div class="list-group">
+  
   <a ui-sref="dashboard.mail.list" ng-click="inboxDis.inboxDisplay()" ui-sref-active="active" class="list-group-item">Inbox</a>
   <a ui-sref="dashboard.mail.junk" ui-sref-active="active" class="list-group-item">Junk Email</a>
   <a ui-sref="dashboard.mail.drafts" ui-sref-active="active" class="list-group-item">Drafts</a>
   <a ui-sref="dashboard.mail.sentitems" ui-sref-active="active" class="list-group-item">Sent Items</a>
   <a ui-sref="dashboard.mail.deleteditems" ui-sref-active="active" class="list-group-item">Deleted Items</a>
+  
 </div>
+{{title}}
 </div>
 </div>

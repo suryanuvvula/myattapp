@@ -1,15 +1,75 @@
-<div class="listInbox">
+<style>
+@media(max-width:992px){
+.visible{
+  display : block !important;
+}
+}
+</style>
+ <div style= "background-color:aliceblue;width:100%;height:35px;">
+ 
+ <div class="mainElements borderPad">
+ <span class="glyphicon glyphicon-plus-sign"></span>
+ <a ng-click="inboxDis.showEmail()">
+ New
+ <span class="caret"></span>
+</a>
+ </div>
+ <div class="mainElements borderPad" ng-show="inboxDis.showLine">
+ <span class="glyphicon glyphicon-trash"><a ng-click="inboxDis.deleteEmail()" style="padding-left:5px;">Delete</a></span>
+ </div>
+ <div class="mainElements borderPad" ng-show="inboxDis.showLine">
+ <span class="glyphicon glyphicon-folder-close"><a ng-click="archiveEmail()" style="padding-left:5px;">Archive</a></span>
+ </div>
+
+ <div class="mainElements borderPad" ng-show="inboxDis.showLine">
+ <span><a ng-click="archiveEmail()" style="padding-left:5px;">Junk</a></span>
+ </div>
+
+ <div class="mainElements borderPad" ng-show="inboxDis.showLine">
+ <span><a ng-click="archiveEmail()" style="padding-left:5px;">Sweep</a></span>
+ </div>
+
+ 
+
+ <div class="mainElements borderPad dropdown open" is-open="status.isopen" ng-show="inboxDis.showLine">
+      <a ng-click="archiveEmail()" id="single-button" ng-disabled="disabled">
+        Move to <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+        <li role="menuitem"></li>
+        <li role="menuitem">Deleted Items</li>
+        <li role="menuitem">Junk Email</li>
+        <li class="divider"></li>
+        <li role="menuitem" id="newfolder" ng-click="inboxDis.showTextBar($event)">New Folder</li>
+        <li ng-show="inboxDis.showField"><input type="text" placeholder="Enter new folder name" ng-model="folderName" ng-change="inboxDis.createNewFolder($event,folderName)"/></li>
+      </ul>
+    </div>
+
+ <div class="mainElements borderPad" ng-show="inboxDis.showLine">
+ <span><a ng-click="archiveEmail()" style="padding-left:5px;">Categories</a><span class="caret"></span></span>
+ </div>
+
+ 
+ </div>
+ 
+<div class="col-xs-12">
+<div class="col-xs-12 col-lg-5" ng-class="{'mainBorder' : inboxDis.showLine}" >
+<div class="listInbox col-xs-12">
 <h2>This is displayed when clicked on inbox</h2>
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" ng-class="inboxDis.listClass(inbox.title)">
-  <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
-  <span><a ui-sref=".inboxitem">{{inbox.title}}</a></span>
-  
-  <div style="margin-left:75px;" ng-bind-html="inbox.description"></div>
-  
-  </li>
-  
+<li ui-sref=".inboxitem({inboxListID:inbox.id})" id="inboxListItem" ng-click="inboxDis.displayItems(inbox.id)" class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" ng-class="inboxDis.listClass(inbox.title)">
+<img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
+<span>{{inbox.title}}</span>
+
+<div style="margin-left:75px;" ng-bind-html="inbox.description"></div>
+
+</li>
+
 </ul>
 
 </div>
-<div ui-view></div>
+
+</div>
+<div ui-view class="col-xs-7" ng-hide="inboxDis.hideContent || inboxDis.listDescription"></div>
+<div class="col-xs-7 displayMail" ng-include src="'/src/module/template/mail.compose.html'" ng-show="inboxDis.hideContent"></div>
+</div>
