@@ -8,35 +8,23 @@ function inboxCtrl($scope,$http,inboxService,$state,$window,$stateParams,$rootSc
 	model.myname = "surya";
 	model.textAng = "myAngularText";
 	model.showDescription = false;
-	model.inboxDisplay = function(){
-		
-		var mail = inboxService.mailList();
-		mail.then(function(response){
-			var mailData = angular.fromJson($window.sessionStorage.getItem('mailData'));
-			//mailData = JSON.parse(mailData);
-			if(mailData){
-			var inboxResponse = response.data;
-			inboxResponse.push(mailData);
-			   
-			}
-		/*	if(mailData['title'] == "angular"){
-				model.myAngular = true;
-			}*/
-			else{
-				var inboxResponse = response.data;
-			}
-			model.inboxData = inboxResponse;
-			
-			
-			
-		});
-		
-		
-	}
-	
-	
-	model.inboxDisplay();
-	
+	model.listItems = [{
+		title:'Inbox',
+		url : 'dashboard.mail.list'
+	},
+    {
+	title:'Junk',
+	url : 'dashboard.mail.junk'
+    },
+    {
+    title:'Drafts',
+	url : 'dashboard.mail.drafts'
+    },
+    {
+    title:'Sent Items',
+	url : 'dashboard.mail.sentitems'
+    }];
+
 	model.displayItems = function(id){
 	var inboxDetails = inboxService.get(id);
 	$('li#inboxListItem').on('click',function(){
@@ -109,6 +97,7 @@ function inboxCtrl($scope,$http,inboxService,$state,$window,$stateParams,$rootSc
     if (keyCode === 13) {
         // Do that thing you finally wanted to do
 		console.log(showInput);
+		model.listItems.push(showInput);
 	}
 	}
 	

@@ -1,0 +1,35 @@
+
+<form name="mailForm" class="form-horizontal" role="form">
+    <div class="form-group">
+      
+      <div class="col-xs-12">
+	  <label>To :</label>
+        <input type="text" name="name" ng-model="name" class="form-control" required>
+		<span ng-show="mailForm.name.$invalid && !mailForm.name.$pristine">Please fill the name</span>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-xs-12">
+	  <label>Subject : </label>
+        <input type="text" name="Subject" ng-model="Subject" class="form-control" required>
+		<span ng-show="mailForm.Host.$invalid && !mailForm.Host.$pristine">Please fill the host name</span>
+      </div>
+    </div>
+    
+	<div class="form-group">
+	
+	<div class="col-xs-12">
+	<label>Content : </label>
+        <text-angular ng-model="Content" name="demo-editor"></text-angular>
+      </div>
+ </div>
+   
+
+  </form>
+
+<div class="animated fadeIn">
+<button ng-disabled ="mailForm.$invalid" value="submit"  ng-click="inboxDis.myMail(name,Subject,Content)" class="btn btn-primary">Send</button>
+<button class="btn btn-default">Cancel</button>
+</div>
+

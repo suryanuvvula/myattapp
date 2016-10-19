@@ -41,7 +41,7 @@
         <li role="menuitem">Junk Email</li>
         <li class="divider"></li>
         <li role="menuitem" id="newfolder" ng-click="inboxDis.showTextBar($event)">New Folder</li>
-        <li ng-show="inboxDis.showField"><input type="text" placeholder="Enter new folder name" ng-model="folderName" ng-change="inboxDis.createNewFolder($event,folderName)"/></li>
+        <li ng-show="inboxDis.showField"><input type="text" placeholder="Enter new folder name" ng-model="folderName" ng-keydown="inboxDis.createNewFolder($event,folderName)"/></li>
       </ul>
     </div>
 
@@ -52,12 +52,14 @@
  
  </div>
  
-<div class="col-xs-12">
+<div class="col-xs-12" ng-controller="inbxController as inbxCtrl">
 <div class="col-xs-12 col-lg-5" ng-class="{'mainBorder' : inboxDis.showLine}" >
 <div class="listInbox col-xs-12">
 <h2>This is displayed when clicked on inbox</h2>
+<p>{{inboxData}}</p>
+<p>{{myVar}}</p>
 <ul class="list-group">
-<li ui-sref=".inboxitem({inboxListID:inbox.id})" id="inboxListItem" ng-click="inboxDis.displayItems(inbox.id)" class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" ng-class="inboxDis.listClass(inbox.title)">
+<li id="inboxListItem" ui-sref="dashboard.mail.list.inboxitem" ng-click="inboxDis.displayItems(inbox.id)" class="list-group-item" ng-repeat="inbox in inbxCtrl.inboxData" ng-class="inboxDis.listClass(inbox.title)">
 <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
 <span>{{inbox.title}}</span>
 
@@ -70,6 +72,7 @@
 </div>
 
 </div>
+
 <div ui-view class="col-xs-7" ng-hide="inboxDis.hideContent || inboxDis.listDescription"></div>
 <div class="col-xs-7 displayMail" ng-include src="'/src/module/template/mail.compose.html'" ng-show="inboxDis.hideContent"></div>
 </div>

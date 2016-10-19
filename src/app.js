@@ -37,8 +37,9 @@
 		})
 		
 		.state('dashboard.mail.list',{
-			url : '/inbox',
+			url : '/path=inbox',
 			templateUrl : '/src/module/template/mail.list.html'
+			
 		})
 		
 		//nested views 
@@ -50,27 +51,27 @@
 		})
 		
 		.state('dashboard.mail.junk',{
-			url : '/junk',
+			url : '/path=junk',
 			templateUrl : '/src/module/template/mail.junk.html'
 		})
 		
 		.state('dashboard.mail.drafts',{
-			url : '/drafts',
+			url : '/path=drafts',
 			templateUrl : '/src/module/template/mail.drafts.html'
 		})
 		
 		.state('dashboard.mail.sentitems',{
-			url : '/sentitems',
+			url : '/path=sentitems',
 			templateUrl : '/src/module/template/mail.sentitems.html'
 		})
 		
 		.state('dashboard.mail.deleteditems',{
-			url : '/deleteditems',
+			url : '?path=deleteditems',
 			templateUrl : '/src/module/template/mail.deleteditems.html'
 		})
 		
 		.state('dashboard.mail.compose',{
-			url : '/compose',
+			url : '?path=compose',
 			templateUrl : '/src/module/template/mail.compose.html'
 		})
 		

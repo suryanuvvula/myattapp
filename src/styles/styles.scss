@@ -1,0 +1,83 @@
+$margin : 70px;
+$border-left-width: 5px;
+$padd : inherit;  
+$top-padding : 20px;
+$pL : 15px;
+$pR : 20px;
+$pT : 8px;
+
+
+
+
+@mixin border-radius($radius) {
+
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body{
+   .outlook-container{
+	margin-top : $margin;
+}
+.mailClass{
+    border-left-color: #23b7e5;
+	border-left-width: $border-left-width;
+}
+.angularClass{
+    border-left-color:  #7266ba;
+	border-left-width: $border-left-width;
+}
+
+.listInbox{
+    display : inline-block;
+    @include border-radius(10px);
+    border-color:black;	
+}
+.mainMessage{
+    padding : $padd;
+}
+
+.displayMail {
+    padding-top : $top-padding;
+}
+
+.list-group-item:hover {
+    background-color : gainsboro;
+    cursor:pointer;
+}
+
+.mainElements {
+    float : left;
+}
+
+.mainBorder {
+    border-right-style:groove;
+}
+
+.borderPad {
+    padding-left : $pL;
+    padding-right : $pR;
+    padding-top : $pT;
+    
+}
+
+.pBLeft {
+    padding-left: 0px;
+    border-left-style: groove;
+}
+
+.slideUp {
+    display : none;
+}
+
+
+
+
+}
+
+
+
+
+
