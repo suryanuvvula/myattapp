@@ -8,7 +8,11 @@
 		inboxSer.mailList = function(){
 			return $http.get('src/module/service/inboxData.json')		
 		}
-		return inboxSer;
+		
+	   inboxSer.draftsList = function(){
+		   return $http.get('src/module/service/drafts.json')	
+	   }
+	   return inboxSer;
 	}
 	
 	inboxService.$inject = ['$http'];

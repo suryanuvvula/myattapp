@@ -1,10 +1,13 @@
 
 <h2>This is displayed when clicked on sentitems</h2>
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="inbox in inboxDis.inboxData" >
+<ul class="list-group col-xs-6" ng-controller="sentitemsCntrl as sentCntrl">
+  <li class="list-group-item" ui-sref="dashboard.mail.sentitems.inboxitem" ng-click="inboxDis.displayItems(inbox.id)" ng-repeat="inbox in sentCntrl.inboxData" >
   <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
   <span>{{inbox.title}}</span>
   <div style="margin-left:75px;">{{inbox.description}}</div>
   </li>
   
 </ul>
+
+<div ui-view class="col-xs-6" ng-hide="inboxDis.hideContent || inboxDis.listDescription"></div>
+<div class="col-xs-6 displayMail" ng-include src="'/src/module/template/mail.compose.html'" ng-show="inboxDis.hideContent"></div>

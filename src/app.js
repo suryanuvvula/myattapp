@@ -54,15 +54,33 @@
 			url : '/path=junk',
 			templateUrl : '/src/module/template/mail.junk.html'
 		})
+
+		.state('dashboard.mail.junk.inboxitem',{
+			url : '/inboxitem/:inboxListID',
+			templateUrl : '/src/module/template/InboxItem.html',
+			
+		})
 		
 		.state('dashboard.mail.drafts',{
 			url : '/path=drafts',
 			templateUrl : '/src/module/template/mail.drafts.html'
 		})
+
+		.state('dashboard.mail.drafts.inboxitem',{
+			url : '/inboxitem/:inboxListID',
+			templateUrl : '/src/module/template/InboxItem.html',
+			
+		})
 		
 		.state('dashboard.mail.sentitems',{
 			url : '/path=sentitems',
 			templateUrl : '/src/module/template/mail.sentitems.html'
+		})
+
+		.state('dashboard.mail.sentitems.inboxitem',{
+			url : '/inboxitem/:inboxListID',
+			templateUrl : '/src/module/template/InboxItem.html',
+			
 		})
 		
 		.state('dashboard.mail.deleteditems',{

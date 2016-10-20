@@ -20,6 +20,9 @@
 				}
 			});
 		}
+		inboxSer.draftsList = function(){
+		   return $http.get('src/module/service/drafts.json')	
+	   }
 		return inboxSer;
 	}
 	
