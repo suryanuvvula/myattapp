@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="outlookApp">
 <head>
-<title>My MEAN stack application</title>
+<title>{{pagetitle}}</title>
 
 <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css" />
 <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css"/>
 <link rel="stylesheet" href="/bower_components/textAngular/dist/textAngular.css">
-<link rel="stylesheet" type="text/css" href="/src/styles/styles.css"/>
+<link rel="stylesheet" type="text/css" href="/src/styles/style.css"/>
 
 </head>
 <body>
-<div ng-app="outlookApp">
+<div>
 <div ui-view="header"></div>
 <div ui-view="mainContainer"></div>
 <div ui-view="footer"></div>
@@ -21,17 +21,24 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script src="bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js"></script>
-
+<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="/bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
 <script src="/bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
 <script src="/bower_components/textAngular/dist/textAngular.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
 
 <script type="text/javascript" src="https://code.angularjs.org/1.2.16/angular-animate.min.js"></script>
 <script src="./src/app.js"></script>
 <script src="/src/module/directive/inboxlayout/Inbox.directive.js"></script>
+<script src="src/module/directive/inboxlayout/pullupChevron.directive.js"></script>
 <script src="/src/module/component/signin/signin.Controller.js"></script>
 <script src="src/module/directive/inboxlayout/inbox.controller.js"></script>
+<script src="src/module/controller/inbxCtrl.js"></script>
+<script src="src/module/controller/junkCtrl.js"></script>
+<script src="src/module/controller/draftsCntrl.js"></script>
+<script src="src/module/controller/sentitemsCntrl.js"></script>
+<script src="src/module/service/mailservice.js"></script>
 <script src="src/module/service/service.js"></script>
 
 
