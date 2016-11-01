@@ -29,6 +29,26 @@
 		});
 }
        model.inboxDisplay();
+
+       model.displayItems = function(id){
+	var inboxDetails = inboxService.getInbox(id);
+	$('li#inboxListItem').on('click',function(){
+		$('li#inboxListItem').removeClass('active');
+		$(this).addClass('active');
+	})
+	model.hideContent = false;
+	model.listDescription = false;
+	model.showLine = true;
+
+	inboxDetails.then(function(data){
+		if(data != undefined){
+		model.mailList = data;
+		
+		$rootScope.pagetitle = data.title;
+		model.showDescription = !model.showDescription;
+		}
+	})
+	}
     }
 
     inbxController.$inject = ['$scope','$http','inboxService','$state','$window','$stateParams','$rootScope'];

@@ -57,7 +57,7 @@
 <div class="listInbox col-xs-12">
 <h2>This is displayed when clicked on inbox</h2>
 <ul class="list-group">
-<li id="inboxListItem" ui-sref="dashboard.mail.list.inboxitem" ng-click="inboxDis.displayItems(inbox.id)" class="list-group-item" ng-repeat="inbox in inbxCtrl.inboxData" ng-class="inboxDis.listClass(inbox.title)">
+<li id="inboxListItem" ui-sref="dashboard.mail.list.inboxitem" ng-click="inbxCtrl.displayItems(inbox.id,'inbox')" class="list-group-item" ng-repeat="inbox in inbxCtrl.inboxData" ng-class="inboxDis.listClass(inbox.title)">
 <img class="img-circle" width="70px" ng-src="src/module/component/images/a10.jpg" src="src/module/component/images/a10.jpg">
 <span>{{inbox.title}}</span>
 

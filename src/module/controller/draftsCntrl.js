@@ -28,7 +28,7 @@
 			
 		});
 }
-       model.inboxDisplay();
+       model.inboxDisplay();	
     }
 
 

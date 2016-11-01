@@ -5,7 +5,8 @@
 <div class="col-xs-12 col-lg-5" ng-class="{'mainBorder' : inboxDis.showLine}" >
 <div class="listInbox col-xs-12">
 <ul class="list-group">
-<li id="inboxListItem" ui-sref="dashboard.mail.junk.inboxitem" ng-click="inboxDis.displayItems(inbox.id)" class="list-group-item" ng-repeat="inbox in junkCtrl.inboxData" ng-class="inboxDis.listClass(inbox.title)">
+  <p>{{inboxDis.displayItems}}</p>
+<li id="inboxListItem" ui-sref="dashboard.mail.junk.inboxitem" ng-click="inboxDis.displayItems(inbox.id,'junk')" class="list-group-item" ng-repeat="inbox in junkCtrl.inboxData" ng-class="inboxDis.listClass(inbox.title)">
 <img class="img-circle" width="70px" ng-src="src/module/component/images/grunt.jpg" src="src/module/component/images/grunt.jpg">
 <span>{{inbox.title}}</span>
 
